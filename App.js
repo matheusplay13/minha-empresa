@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView, View, Text, TouchableOpacity, StyleSheet, ScrollView, TextInput, Alert } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+export default function App () {
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
+function Header({ pagina, setPagina}) {
+  const [pagina, setPagina] = useState ('home');
+
+  return (
+  
+  <SafeAreaView style={StyleSheet.container}>
+  
+  <Header pagina={pagina} setPagina={setPagina} />
+  <ScrollView contentContainerStyle={StyleSheet.content}>
+  
+  
+    {pagina === 'home' && <Home />}
+    {pagina === 'sobre' && <Sobre />}
+    {pagina === 'serviços' && <serviços />}
+    {pagina === 'contato ' && <Contato />}
+  </ScrollView>
+  <Footer />
+  </SafeAreaView>
+  );
+
+}
+
+function Header ({ pagina, setPagina}) {
+  return (
+    <View style={style.header}>
+      <Text style={StyleSheet.headerTitle}>Minha Empresa</Text>
+    </View>
+  )
+}
