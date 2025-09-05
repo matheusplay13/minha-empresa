@@ -7,14 +7,15 @@ export default function App () {
 
 
 
-function Header({ pagina, setPagina}) {
+
+function Header({ Pagina, setPagina}) {
   const [pagina, setPagina] = useState ('home');
 
   return (
   
   <SafeAreaView style={StyleSheet.container}>
   
-  <Header pagina={pagina} setPagina={setPagina} />
+  <Header pagina={Pagina} setPagina={setPagina} />
   <ScrollView contentContainerStyle={StyleSheet.content}>
   
   
@@ -29,10 +30,12 @@ function Header({ pagina, setPagina}) {
 
 }
 
+// lucas roginski
+
 function Header ({ pagina, setPagina}) {
   return (
     <View style={style.header}>
-      <Text style={StyleSheet.headerTitle}>Minha Empresa</Text>
+      <Text style={StyleSheet.headerTitle}>Dream Snap</Text>
       <View style={StyleSheet.nav}>
         {['home', 'sobre', 'servicos', 'contato'].map((p) => (
           <TouchableOpacity>
